@@ -1,21 +1,32 @@
-<div class="column" id="{{dispo}}">
-  <ul>
-    <li *ngFor="let element of dispoContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">{{element.title}}</li>
-  </ul>
-</div>
-<div class="column" id="{{classA}}" (drop)="onDrop($event)" (dragover)="allowDrop($event)">
-  <ul>
-    <li *ngFor="let element of classAContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">
-      <span>{{element.title}}</span>
-      <button (click)="removeFromA(i)">X</button>
-    </li>
-  </ul>
-</div>
-<div class="column" id="{{classB}}" (drop)="onDrop($event)" (dragover)="allowDrop($event)">
-  <ul>
-    <li *ngFor="let element of classBContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">
-      <span>{{element.title}}</span>
-      <button (click)="removeFromB(i)">X</button>
-    </li>
-  </ul>
+<div class="center">
+  <div class="column" id="{{dispo}}">
+    <div class="header">
+      <p>Utilisateurs disponibles</p>
+    </div>
+    <ul>
+      <li *ngFor="let element of dispoContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">{{element.title}}</li>
+    </ul>
+  </div>
+  <div class="column" id="{{classA}}" (drop)="onDrop($event)" (dragover)="allowDrop($event)">
+    <div class="header">
+      <p>Classe A</p>
+    </div>
+    <ul>
+      <li *ngFor="let element of classAContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">
+        <span>{{element.title}}</span>
+        <button (click)="removeFromA(i)" class="align-right">X</button>
+      </li>
+    </ul>
+  </div>
+  <div class="column" id="{{classB}}" (drop)="onDrop($event)" (dragover)="allowDrop($event)">
+    <div class="header">
+      <p>Classe B</p>
+    </div>
+    <ul>
+      <li *ngFor="let element of classBContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">
+        <span>{{element.title}}</span>
+        <button (click)="removeFromB(i)" class="align-right">X</button>
+      </li>
+    </ul>
+  </div>
 </div>
