@@ -3,35 +3,32 @@ body {
 }
 
 .center {
-    width: 100%;
-    margin-top: 10%;
+  width: 100%;
+  margin-top: 10%;
 }
 
 .center > div:first-child {
-    margin-left: 5%;
-    width: 28%;
-    height: 400px;
-    border: black 1px solid;
-    float: left;
- 
+  margin-left: 5%;
+  width: 28%;
+  height: 400px;
+  border: black 1px solid;
+  float: left;
 }
 
 #classA {
-    margin-left: 3%;
-    margin-right: 3%;
-    width: 28%;
-    height: 400px;
-    border: black 1px solid;
-    float: left;
-
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 28%;
+  height: 400px;
+  border: black 1px solid;
+  float: left;
 }
 
 #classB {
-    width: 28%;
-    height: 400px;
-    border: black 1px solid;
-    float: left;
-
+  width: 28%;
+  height: 400px;
+  border: black 1px solid;
+  float: left;
 }
 
 li {

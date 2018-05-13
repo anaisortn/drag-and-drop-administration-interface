@@ -4,24 +4,36 @@ import * as io from 'socket.io-client'
 
 import { Element } from './elements'
 
+export interface Update {
+  element: Element,
+  index: number,
+  source: string,
+  target: string,
+  type: string,
+}
+
+export interface Remove {
+  index: number,
+  name: string,
+}
+
 export class TransportService {
+
+  public INIT_EVENT = 'init'
+  public REMOVE_EVENT = 'remove'
+  public UPDATE_EVENT = 'update'
 
   private _socket = io('http://localhost:5000')
 
   public getUpdates() {
     return new Observable(observer => {
-      this._socket.on('updateElements', (data) => observer.next(data))
+      this._socket.on('updateElements', (data: Update) => observer.next(data))
+      this._socket.on('init', (data: Update[]) => data.forEach(el => observer.next(el)))
     })
   }
 
-
-  public moveElement(type: string, el: Element, target: string) {
-    this._socket.emit('moveElements', {
-      element: el,
-      target,
-      type,
-    })
+  public moveElement(event: Update) {
+    this._socket.emit('moveElements', event)
   }
-
 
 }
