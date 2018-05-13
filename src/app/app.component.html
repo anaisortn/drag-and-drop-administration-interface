@@ -1,23 +1,21 @@
-<div class="center">
-  <div>
-    <ul id="{{dispo}}">
-      <li *ngFor="let element of dispoContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">{{element.title}}</li>
-    </ul>
-  </div>
-  <div (drop)="onDrop($event)" (dragover)="allowDrop($event)">
-    <ul id="{{classA}}">
-      <li *ngFor="let element of classAContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">
-        <span>{{element.title}}</span>
-        <button (click)="removeFromA(i)">X</button>
-      </li>
-    </ul>
-  </div>
-  <div (drop)="onDrop($event)" (dragover)="allowDrop($event)">
-    <ul id="{{classB}}">
-      <li *ngFor="let element of classBContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">
-        <span>{{element.title}}</span>
-        <button (click)="removeFromB(i)">X</button>
-      </li>
-    </ul>
-  </div>
+<div class="column" id="{{dispo}}">
+  <ul>
+    <li *ngFor="let element of dispoContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">{{element.title}}</li>
+  </ul>
+</div>
+<div class="column" id="{{classA}}" (drop)="onDrop($event)" (dragover)="allowDrop($event)">
+  <ul>
+    <li *ngFor="let element of classAContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">
+      <span>{{element.title}}</span>
+      <button (click)="removeFromA(i)">X</button>
+    </li>
+  </ul>
+</div>
+<div class="column" id="{{classB}}" (drop)="onDrop($event)" (dragover)="allowDrop($event)">
+  <ul>
+    <li *ngFor="let element of classBContainer; let i = index" draggable="true" (dragstart)="onDragStart($event, i)">
+      <span>{{element.title}}</span>
+      <button (click)="removeFromB(i)">X</button>
+    </li>
+  </ul>
 </div>

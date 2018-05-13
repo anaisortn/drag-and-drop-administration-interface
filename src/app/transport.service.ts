@@ -41,7 +41,7 @@ export class TransportService {
     if (isDevMode()) {
       return 'http://localhost:5000'
     }
-    return 'http://localhost:5000'
+    return 'http://anaisortn-dnd-server.herokuapp.com'
   }
 
 }

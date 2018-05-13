@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
 
   public onDragStart(event: any, index: number) {
     this._index = index
-    this._source = event.srcElement.parentElement.id
+    this._source = event.srcElement.parentElement.parentElement.id
   }
 
   public onDrop(event) {
